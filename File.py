@@ -5,7 +5,7 @@ import os
 #Assign variable to load file
 file_to_load=os.path.join("Input Data","election_results.csv")
 #Assign variable to save output
-file_to_save=os.path.join("Output Data","Election Analysis.txt")
+file_to_save=os.path.join("Output Data","election_analysis.txt")
 
 # Initialization
 total_votes = 0
@@ -61,6 +61,7 @@ with open(file_to_save, "w") as txt_file:
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
         f"-------------------------\n"
+        f"\n"
         f"County Votes:\n")
     print(election_results, end="")
 
@@ -74,7 +75,7 @@ with open(file_to_save, "w") as txt_file:
          #print
          country_results = (
              f"{country}: {country_vote_percentage:.1f}% ({country_vote:,})\n")
-         print(country_results)
+         print(country_results,end="")
          #Save the county votes to a text file.
          txt_file.write(country_results)
 
@@ -86,6 +87,7 @@ with open(file_to_save, "w") as txt_file:
 
     # Print 
     country_largest_turnout_summary = (
+            f"\n"
             f"-------------------------\n"
             f"Largest Country Turnout: {country_largest}\n"
             f"-------------------------\n")
